@@ -4,9 +4,17 @@ import cors from 'cors'
 import EmployeeModel from './models/Employee.js';
 
 const app=express()
-app.use(express.json())
-app.use(cors())
 
+app.use(cors(
+    {
+        origin:["https://log-reg-mern.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+    
+
+));
+app.use(express.json())
 // mongoose.connect("mongodb://127.0.0.1:27017/employee")
 mongoose.connect("mongodb+srv://vrindashine25:GZUuFqyi3pLpuTM9@cluster0.1e66qb3.mongodb.net/log-reg-mern?retryWrites=true&w=majority&appName=Cluster0")
 
