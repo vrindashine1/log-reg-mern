@@ -18,6 +18,9 @@ app.use(express.json())
 // mongoose.connect("mongodb://127.0.0.1:27017/employee")
 mongoose.connect("mongodb+srv://vrindashine25:GZUuFqyi3pLpuTM9@cluster0.1e66qb3.mongodb.net/log-reg-mern?retryWrites=true&w=majority&appName=Cluster0")
 
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
 app.post("/login",(req,res)=>{
     const {email,password}=req.body
     EmployeeModel.findOne({email:email})
